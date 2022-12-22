@@ -7,6 +7,7 @@ import torch
 # Forward function for sequence classification
 def forward_sequence_classification(model, batch_data, i2w, is_test=False, device='cpu', **kwargs):
     # Unpack batch data
+    subword_batch = 0
     if len(batch_data) == 3:
         (subword_batch, mask_batch, label_batch) = batch_data
         token_type_batch = None
